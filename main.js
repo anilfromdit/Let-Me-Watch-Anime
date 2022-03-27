@@ -30,6 +30,9 @@ function next(animeLink,episodeNumber) {
 
 }
 function previous(animeLink,episodeNumber) {
+    if(episodeNumber<=1){
+        return;
+    }
     let ultraMaxProFinalLink = animeLink + (episodeNumber - 1);
     console.log(ultraMaxProFinalLink)
     chrome.tabs.update({ active: true, url: ultraMaxProFinalLink });
