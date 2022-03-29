@@ -1,5 +1,6 @@
 {
     "name":"Let Me Watch Anime @anilfromdit",
+    "description":"Let me watch anime helps you to navigate to next/previous anime episode on some popular website without leaving full screen mode",
     "version":"0.0.1",
     "manifest_version": 3,
     "action":{
@@ -9,7 +10,7 @@
     "icons":{
         "128":"logo.png"
     },
-    "permissions":["activeTab","scripting","tabs"],
+    "permissions":["activeTab","scripting","tabs","webNavigation"],
     "background": {
         "service_worker": "main.js"
       },
