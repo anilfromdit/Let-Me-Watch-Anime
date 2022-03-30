@@ -12,10 +12,10 @@ background: rgb(71, 71, 128);
 }
 p{
     height: auto;
-    width: auto;
+    width: 100%;
     display: block;
     font: 400 5vmax cursive;
-    margin: auto
+    margin: auto 
 }
 h1{
     text-align: right;
