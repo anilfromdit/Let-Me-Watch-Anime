@@ -9,9 +9,9 @@ leaving full screen mode and manually selecting next episode number
 
 - https://animeheaven.pro/
 - https://ww.animeland.tv/
+- https://animeheaven.online/
 
 ## Will support in future
-- https://animeheaven.online/
 - https://kissanime.com.ru/
 ## Tech Stack
 
