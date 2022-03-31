@@ -25,6 +25,16 @@ chrome.webNavigation.onCompleted.addListener(function () {
                 animeLink = animeLink + finalUrl[i] + "/"
             }
         }
+        // https://kissanime.com.ru/Anime/Naruto-Shippuuden.41646/Episode-494?id=134730
+        else if(newUrl.includes("kissanime.com.ru")){
+            finalUrl = newUrl.split("Episode-");
+            animeLink = finalUrl[0] + "Episode-";
+            episodeAndId=finalUrl[1].split("?id=");
+            episodeNumber = parseInt(episodeAndId[0], 10)
+            let id = parseInt(episodeAndId[1], 10);
+            rest = "?id="+(++id);
+
+        }
         else {
             finalUrl = newUrl.split("episode-");
             animeLink = finalUrl[0] + "episode-";
@@ -32,7 +42,7 @@ chrome.webNavigation.onCompleted.addListener(function () {
             tRest = finalUrl[1].split(episodeNumber)
             rest = tRest[1]
         }
-        // console.log("\nanimeLink: " + animeLink + "\nepisodeNumber: " + episodeNumber + "\nrest: " + rest)
+        console.log("\nanimeLink: " + animeLink + "\nepisodeNumber: " + episodeNumber + "\nrest: " + rest)
         myCallBackFunction(animeLink, episodeNumber, rest)
     }
     function next(animeLink, episodeNumber, rest) {
@@ -64,4 +74,4 @@ chrome.webNavigation.onCompleted.addListener(function () {
     }
 
 
-}, { url: [{ hostSuffix: "animeheaven.pro" }, { hostSuffix: "animeland.tv" }, { hostContains: "animeheaven.online" }] });
+}, { url: [{ hostSuffix: "animeheaven.pro" }, { hostSuffix: "animeland.tv" }, { hostContains: "animeheaven.online" }, { hostContains: "kissanime.com.ru" }] });
